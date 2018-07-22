@@ -1,0 +1,12 @@
+{application, phonebook,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { phonebook_app, []}},
+  {env, []}
+ ]}.
