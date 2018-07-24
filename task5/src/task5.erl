@@ -28,7 +28,7 @@ phonebook_node(Phonebook) ->
             Clients = phonebook:search_by_name(Phonebook, Name),
             From ! {self(), Clients},
             phonebook_node(Phonebook);
-        {From, {search_by_phone, Phone}} ->
+        {From, {search_by_pnumber, Phone}} ->
             Clients = phonebook:search_by_pnumber(Phonebook, Phone),
             From ! {self(), Clients},
             phonebook_node(Phonebook);
@@ -55,7 +55,7 @@ read(Pid, Filename) ->
     Pid ! {self(), {read_phonebook, Filename}},
     receive
         {Pid, Resp} -> Resp
-    after 2000 ->
+    after 5000 ->
         timeout
     end.
 
@@ -65,7 +65,7 @@ search_by_name(Pid, Name) ->
     Pid ! {self(), {search_by_name, Name}},
     receive
         {Pid, Resp} -> Resp
-    after 2000 ->
+    after 5000 ->
         timeout
     end.
 
@@ -75,6 +75,6 @@ search_by_pnumber(Pid, Phone) ->
     Pid ! {self(), {search_by_pnumber, Phone}},
     receive
         {Pid, Resp} -> Resp
-    after 2000 ->
+    after 5000 ->
         timeout
     end.
