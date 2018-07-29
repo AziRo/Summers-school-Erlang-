@@ -1,0 +1,12 @@
+{application, task6,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { task6_app, []}},
+  {env, []}
+ ]}.
