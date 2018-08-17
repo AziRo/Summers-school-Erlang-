@@ -2,3 +2,7 @@
 ebin
 .rebar
 *.txt
+priv
+*.json
+*.o
+*.d
