@@ -1,0 +1,12 @@
+{application, gen_f,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { gen_f_app, []}},
+  {env, []}
+ ]}.
